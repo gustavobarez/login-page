@@ -9,6 +9,6 @@ function acessar() {
     if(!loginEmail || !loginSenha) {
         alert('Favor preencher os campos');
     } else {
-        alert('Acesso liberado');
+        window.location.href = "cadastro.html";
     }
 }
