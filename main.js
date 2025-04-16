@@ -21,7 +21,6 @@ function salvarUser() {
     if(nomeUser) {
         dadosLista.push(nomeUser);
         criaLista();
-        console.log('salvarUser if')
         document.getElementById('nomeUser').value = '';
     } else {
         alert('Favor informar um nome para cadastro');
@@ -30,11 +29,16 @@ function salvarUser() {
 
 // funcao para preencher a lista de cadastro
 function criaLista() {
-    let tabela = "<tr><td>Nome</td><th>Actions</th></tr>";
+    let tabela = "<tr><th>Nome</th><th>Actions</th></tr>";
     for (let i = 0;i <= (dadosLista.length -1);i++) {
-        tabela += "<tr><td>" + dadosLista[i] + "</td><button class='btn btn-warning'>Editar</button><button class='btn btn-danger'>Excluir</button><td>Actions</td></tr>";
+        tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class='btn btn-warning'>Editar</button></td><td><button class='btn btn-danger' onclick='excluir(this.parentNode.parentNode.rowIndex)'>Excluir</button></td></tr>";
         document.getElementById('tabela').innerHTML = tabela;
-        console.log('chegou');
     }
 }
 
+// funcao para excluir nome da lista
+
+function excluir(i) {
+    dadosLista.splice((i-1), 1);
+    document.getElementById('tabela').deleteRow(i);   
+}
