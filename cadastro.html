@@ -8,12 +8,21 @@
 </head>
 <body>
     <div class="container">
-        <h1>Cadastro</h1>
+        <h1 style="text-align: center;">Cadastro</h1>
         <br>
         <label for="">Nome</label>
         <input type="text" name="" id="nomeUser" class="form-control">
         <br>
-        <button type="button" class="btn btn-primary">Salvar</button>
+        <button type="button" class="btn btn-primary" onclick="salvarUser()">Salvar</button>
+    </div>
+
+    <div class="container" style="margin-top: 20px;">
+        <table class="table table-striped" id="tabela">
+            <tr>
+                <th>Nome</th>
+                <th>Actions</th>
+            </tr>
+        </table>
     </div>
     
 </body>
